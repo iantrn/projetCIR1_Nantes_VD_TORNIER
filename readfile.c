@@ -3,21 +3,15 @@
 
 const char* filename = "book.txt";
 
-int main(void) {
+void readFile(char* filename) {
     FILE* file = fopen(filename, "r");
     if (file == NULL) {
         printf("Unable to open file <%s>\n", filename);
         exit(EXIT_FAILURE);
     }
-
     char line[LINE_SIZE];
-    while(fgets(line, sizeof(line), file)) {
-    // ...
+    while(fgets(line, sizeof(line), file)) {        
     }
 }
-
-
-
-
 
 
