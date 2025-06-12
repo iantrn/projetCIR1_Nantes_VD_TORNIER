@@ -19,3 +19,7 @@ struct Text {
     struct Chapter *chapters;
     int chapter_number;
 };
+
+void readFile(char* filename);
+
+void GetChapter(char* line, struct Chapter *chapter);
