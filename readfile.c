@@ -15,6 +15,12 @@ struct Chapter {
 
 struct Text {
     struct Chapter *chapters;
+    int chapter_number;
+};
+
+struct Choice{
+    char id_choice;
+    char text_choice;
 };
 
 
