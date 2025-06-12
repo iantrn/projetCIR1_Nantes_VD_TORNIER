@@ -40,13 +40,12 @@ void readFile(char* filename) {
     if (text->chapters == NULL) {
         printf("Malloc error");
         exit(EXIT_FAILURE);
-    }
+    } 
     text->chapter_number = 10;    
     char line[LINE_SIZE];
     while(fgets(line, sizeof(line), file)) {
         for (int i = 1; i <= 10; i++) {
-            
+
         }
     }
-
 }
