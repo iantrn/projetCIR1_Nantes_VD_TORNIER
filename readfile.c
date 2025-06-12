@@ -8,11 +8,14 @@
 struct Chapter {
     char chapter_title[256];
     int chapter_id;
-    char text[256];
+    char *text;
     char choices;
 
 };
 
+struct Text {
+    struct Chapter *chapters;
+};
 
 
 const char filename = "book.txt";
@@ -29,6 +32,8 @@ void readFile(char* filename) {
     }
 
 }
+
+
 
 
 
