@@ -20,6 +20,5 @@ struct Text {
     int chapter_number;
 };
 
-void GetChapter(struct Chapter *chapter, char* line);
-
+void getChapter(struct Chapter *chapter, char* line);
 void readFile(char* filename);

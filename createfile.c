@@ -6,7 +6,7 @@ void createFiles(struct Text* text, int chapters_number){
         snprintf(file_name, 64, "%d.html", i);
 
         FILE *f = fopen(file_name, "w");
-        if ( f == NULL) {
+        if (f == NULL) {
             printf("Erreur de lecture du chapitre : %d\n", i);
             exit(1);
         }
