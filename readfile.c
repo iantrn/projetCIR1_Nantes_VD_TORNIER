@@ -18,7 +18,7 @@ void readFile(char* filename) {
 
 }
 
-void GetChapter(char* line, struct Chapter *chapter){
+void GetChapter( struct Chapter *chapter, char* line){
     FILE* file = fopen(filename, "r");
     int idChapter;
     char title[256];
