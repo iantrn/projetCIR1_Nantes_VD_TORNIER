@@ -5,7 +5,9 @@
 struct Chapter {
     char chapter_title[256];
     int chapter_id;
-    char choices;
+    char text[256];
+    char *choices;
+
 };
 
 
@@ -19,8 +21,11 @@ void readFile(char* filename) {
         exit(EXIT_FAILURE);
     }
     char line[LINE_SIZE];
-    while(fgets(line, sizeof(line), file)) {        
+    while (fgets(line, sizeof(line), file)) {
+        
     }
+
 }
+    
 
 
