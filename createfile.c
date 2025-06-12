@@ -10,8 +10,8 @@ void createFiles(struct Text* text, int chapters_number){
             printf("Erreur de lecture du chapitre : %d\n", i);
             exit(1);
         }
-        
-        const char* chapter_in_text = (const char*)text->chapters[i-1];
+
+        const char* chapter_in_text = (const char*)text->chapters[i-1].text;
         fprintf(f, "%s", chapter_in_text);
         fclose(f);
     }
