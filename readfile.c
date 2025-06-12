@@ -1,6 +1,15 @@
 #include "readfile.h"
 #define LINE_SIZE 512
 
+
+struct Chapter {
+    char chapter_title[256];
+    int chapter_id;
+    char choices;
+};
+
+
+
 const char* filename = "book.txt";
 
 void readFile(char* filename) {
