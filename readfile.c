@@ -3,25 +3,16 @@
 #include <string.h>
 #include "readfile.h"
 #define LINE_SIZE 512
+struct Choice{
+    int id_choice;
+    char *text_choice;
+};
 
 struct Chapter {
     char chapter_title[256];
     int chapter_id;
     char *text;
-    char *choices;
-};
-
-struct Text {
-    struct Chapter *chapters;
-};
-
-
-
-struct Chapter {
-    char chapter_title[256];
-    int chapter_id;
-    char *text;
-    char choices;
+    struct Choice* choices;
 
 };
 
@@ -30,10 +21,7 @@ struct Text {
     int chapter_number;
 };
 
-struct Choice{
-    char id_choice;
-    char text_choice;
-};
+
 
 
 const char filename = "book.txt";
@@ -46,7 +34,7 @@ void readFile(char* filename) {
     }
     char line[LINE_SIZE];
     while(fgets(line, sizeof(line), file)) {
-    // ...
+
     }
 
 }
