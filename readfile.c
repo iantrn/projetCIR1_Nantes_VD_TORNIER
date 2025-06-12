@@ -2,6 +2,8 @@
 
 #define LINE_SIZE 512
 
+const char* filename = "book.txt";
+
 int main(void) {
     FILE* file = fopen(filename, "r");
     if (file == NULL) {
@@ -14,6 +16,7 @@ int main(void) {
     // ...
 }
 }
+
 
 
 
