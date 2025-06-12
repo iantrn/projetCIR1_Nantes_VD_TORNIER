@@ -20,5 +20,17 @@ void readFile(char* filename) {
 
 }
 
-
-
+void GetChapter(char* line, struct Chapter *chapter){
+    FILE* file = fopen(filename, "r");
+    int idChapter;
+    char title[256];
+    char lines[LINE_SIZE];
+    while(fgets(lines, sizeof(lines), file)) {
+        if(strstr(lines,"<chapter") != NULL){
+            sscanf(line, "<chapter id=\"%d\">%[^<]</chapter>", &idChapter, title);
+            chapter->chapter_title = title;
+            chapter->chapter_id = idChapter;
+            printf("%s,%d",chapter->chapter_title, chapter->chapter_id);
+        };
+    }; 
+};
