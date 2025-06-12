@@ -19,3 +19,4 @@ struct Text {
     struct Chapter *chapters;
     int chapter_number;
 };
+

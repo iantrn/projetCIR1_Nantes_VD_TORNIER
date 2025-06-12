@@ -1,11 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
 #include "readfile.h"
 #define LINE_SIZE 512
 
 
-const char filename = "book.txt";
+const char* filename = "book.txt";
 
 void readFile(char* filename) {
     FILE* file = fopen(filename, "r");
