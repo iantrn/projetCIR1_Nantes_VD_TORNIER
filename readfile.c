@@ -9,12 +9,12 @@ int main(void) {
     if (file == NULL) {
         printf("Unable to open file <%s>\n", filename);
         exit(EXIT_FAILURE);
-}
+    }
 
     char line[LINE_SIZE];
     while(fgets(line, sizeof(line), file)) {
     // ...
-}
+    }
 }
 
 
