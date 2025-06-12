@@ -3,11 +3,4 @@
 
 int main(void) {
     
-
-
-
-
-
-
-    
 }
