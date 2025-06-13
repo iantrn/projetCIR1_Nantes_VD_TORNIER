@@ -11,7 +11,7 @@ void createFiles(struct Text* text, int chapters_number){
             exit(1);
         }
 
-        const char* chapter_in_text = (const char*)text->chapters[i-1].text;
+        const char* chapter_in_text = (const char*)text->chapters[i-1].content;
         fprintf(f, "%s", chapter_in_text);
         fclose(f);
     }

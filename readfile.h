@@ -2,17 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-struct Choice{
-    int id_choice;
-    char *text_choice;
-};
-
 struct Chapter {
-    char chapter_title[256];
-    int chapter_id;
-    char *text;
-    struct Choice* choices;
-
+    char *id;
+    char *title;
+    char* content;
 };
 
 struct Text {
@@ -20,5 +13,5 @@ struct Text {
     int chapter_number;
 };
 
-void getChapter(struct Chapter *chapter, char* line);
-void readFile(char* filename);
+
+void readFile(char* filename, struct Text* text);
