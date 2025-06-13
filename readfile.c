@@ -26,37 +26,19 @@ void readFile(char* filename, struct Text* text) {
     char line[LINE_SIZE];
     struct Chapter* current; 
     text->chapter_number = 0;
+    int chapter_index = -1;
 
     while(fgets(line, sizeof(line), file)) {
-      // Début de chapitre
-        if (strstr(line, "<chapter") != NULL) {
-            current = &text->chapters[text->chapter_number];
-            current->content[0] = '\0';
-
-            // Extraire l'id
-            char* id_start = strstr(line, "id=\"");
-            if (id_start) {
-                id_start += 4;
-                char* id_end = strchr(id_start, '"');
-                if (id_end) *id_end = '\0';
-                strncpy(current->id, id_start, sizeof(current->id));
-            }
-
-            // Extraire le titre (après '>')
-            char* title_start = strchr(line, '>');
-            if (title_start) {
-                title_start++;
-                char* title_end = strstr(title_start, "</chapter>");
-                if (title_end) *title_end = '\0';
-                strncpy(current->title, title_start, sizeof(current->title));
-            }
-
-            text->chapter_number++;
+        if (strstr(line,"<chapter")) {
+            chapter_index++;
+            text->chapters[chapter_index].content[0] = '\0';
         }
-        // Paragraphes, choix, etc. (contenu)
-        else if (current != NULL) {
-            strncat(current->content, line, 2048);
+        if (chapter_index >= 0) {
+            strncat(text->chapters[chapter_index].content, line, 2048);
         }
     }
+    text->chapter_number = chapter_index + 1;
     fclose(file);
 }
+
+

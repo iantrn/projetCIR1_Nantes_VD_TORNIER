@@ -15,4 +15,5 @@ createfile.o: createfile.c createfile.h
 clean: 
 	rm -f main.o readfile.o createfile.o program 
 	rm -f *.html 
+	rm -r export/
 
