@@ -11,6 +11,7 @@ struct Chapter {
     char id[16];
     char title[256];
     char content[4096];
+    char choices[4096];
 };
 
 struct Text {
