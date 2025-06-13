@@ -40,7 +40,7 @@ void readFile(char* filename, struct Text* text) {
             strncat(text->chapters[id-1].content, line, 2048);
         }
         if (strstr(line,"<choice")) {
-
+            sscanf(line, "");
         } 
 
 
