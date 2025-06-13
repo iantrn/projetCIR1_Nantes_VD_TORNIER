@@ -24,22 +24,29 @@ void readFile(char* filename, struct Text* text) {
     }
  
     char line[LINE_SIZE];
-    struct Chapter* current; 
+    struct Chapter* current;
     text->chapter_number = 0;
-    int chapter_index = -1;
+    int id = 0;
 
     while(fgets(line, sizeof(line), file)) {
-        if (strstr(line,"<chapter")) {
-            chapter_index++;
-            current = &text->chapters[chapter_index];
+        if (strstr(line,"<chapter")) {  
+            id++;          
+            current = &text->chapters[id - 1];
             current->content[0] = '\0';
+            sscanf(line, "<chapter id=\"%d\">%[^<]s</chapter>", &id, current->title);
+            printf("%s", current->title);
         }
-        if (chapter_index >= 0) {
-            strncat(text->chapters[chapter_index].content, line, 2048);
+        if (strstr(line,"<p")) {     
+            strncat(text->chapters[id-1].content, line, 2048);
         }
-       
+        if (strstr(line,"<choice")) {
+
+        } 
+
+
+        
     }
-    text->chapter_number = chapter_index + 1;
+    text->chapter_number = id + 1;
     fclose(file);
     
 }

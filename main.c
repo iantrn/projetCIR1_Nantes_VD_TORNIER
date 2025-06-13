@@ -4,9 +4,8 @@
 int main(void) {
     struct Text text; 
     readFile("book.txt", &text);
-    for (int i = 0; i < text.chapter_number; i++) {
-        createFiles(&text, 10); 
+    for (int i = 1; i <= text.chapter_number; i++) {
+        createFiles(&text, i); 
     }
-    free(text.chapters);
     return 0;
 }
