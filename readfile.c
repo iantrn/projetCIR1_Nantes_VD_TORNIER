@@ -32,6 +32,14 @@ void readFile(char* filename, struct Text* text) {
         if (strstr(line,"<chapter")) {
             chapter_index++;
             text->chapters[chapter_index].content[0] = '\0';
+            char* title_start = strchr(line, '>');
+            char* title_end = strstr(line, "</chapter>");
+            if (title_start && title_end) {
+                title_start++; // on passe le '>'
+                int title_len = title_end - title_start;
+                strncpy(current->title, title_start, title_len);
+            }
+
         }
         if (chapter_index >= 0) {
             strncat(text->chapters[chapter_index].content, line, 2048);
