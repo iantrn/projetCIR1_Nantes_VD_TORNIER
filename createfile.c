@@ -31,6 +31,7 @@ void createFiles(struct Text* text, int chapter_id){
         }
     fprintf(f, "<div id=\"overlay\"></div>\n");
     fprintf(f,"<audio id=\"background-audio\" src=\"../web/images/background_musique.mp3\" loop></audio>\n");
+    fprintf(f,"<button id=\"home_button\">\n<i class=\"fa-solid fa-house\"></i>\n</button>\n");
     fprintf(f,"<button id=\"sound_button\">\n<i class=\"fas fa-volume-up\"></i>\n</button>\n");
     fprintf(f, "</body>\n</html>\n");
         

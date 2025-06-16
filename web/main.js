@@ -31,8 +31,16 @@ function main() {
       }
     };
   }
-  
-  window.addEventListener('DOMContentLoaded', backgroundMusic);
+    window.addEventListener('DOMContentLoaded', backgroundMusic);
+    function returnHome(event) {
+        event.preventDefault();
+        if (confirm("Voulez-vous recommencer votre aventure ? ") == true) {  
+            window.location.href = "../export/1.html";   
+        }
+    }
+    let home_button = document.getElementById("home_button");   
+    home_button.addEventListener("click", returnHome);
+    
 
 }
 
