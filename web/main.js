@@ -10,8 +10,8 @@ function main() {
             overlay.classList.remove('active');
             setTimeout(() => {
             window.location.href = link.href;
-            }, 1500);
-        }, 1500);
+            }, 2000);
+        }, 2000);
     });
   });
 }
