@@ -20,3 +20,17 @@ p{
     background-color: black;
     color: white;
 }
+#overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: black;
+    opacity: 0;
+    pointer-events: none; /* Pas cliquable */
+    transition: opacity 3s ease;
+    z-index: 9999;
+  }
+  /* Quand on ajoute la classe active, on voit le fond noir */
+#overlay.active {
+    opacity: 1;
+    pointer-events: auto; /* On bloque les interactions */
+  }
