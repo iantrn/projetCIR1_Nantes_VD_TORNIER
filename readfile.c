@@ -27,23 +27,23 @@ void readFile(char* filename, struct Text* text) {
     struct Chapter* current;
     text->chapter_number = 0;
     int id = 0;
-
+    int choices_number = 0;
+    
     while(fgets(line, sizeof(line), file)) {
         if (strstr(line,"<chapter")) {  
             id++;          
             current = &text->chapters[id - 1];
             current->content[0] = '\0';
             sscanf(line, "<chapter id=\"%d\">%[^<]s</chapter>", &id, current->title);
+            choices_number = 0;
         }
         if (strstr(line,"<p")) {     
             strncat(text->chapters[id-1].content, line, 2048);
         }
         if (strstr(line,"<choice")) {
-            sscanf(line, "");
-        } 
-
-
-        
+            sscanf(line, "<choice idref=\"%d\">%[^<]s<a>", &current->choices[choices_number].choices_id, current->choices[choices_number].choices_content);
+            choices_number++;
+        }     
     }
     text->chapter_number = id + 1;
     fclose(file);
