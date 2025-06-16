@@ -14,6 +14,16 @@ function main() {
         }, 2000);
     });
   });
+  function backgroundMusic() {
+    const audio = document.getElementById('background-audio');
+    audio.play().catch(err => {
+      console.warn("Lecture automatique bloquée. L'utilisateur doit interagir.");
+    });
+  }
+  window.addEventListener('DOMContentLoaded', backgroundMusic);
+
+
+
 }
 
 
