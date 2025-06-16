@@ -23,13 +23,12 @@ h1{
     width: 500px;
     height: 275px;
     display: inline-block;
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -70%); 
 }
 
 .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(./images/vrai\ parchemin.png);
     background-position: center;
     background-repeat: no-repeat;
