@@ -6,8 +6,8 @@ void createFiles(struct Text* text, int chapter_id){
     char file_name[64];
     snprintf(file_name, 64, "export/%d.html", chapter_id);
     char stylesheet[64] = "stylesheet";
-    char css_file[64] = "web/index.css";
-    char js_file[64] = "main.js";
+    char css_file[64] = "../web/index.css";
+    char js_file[64] = "../web/main.js";
     
 
     FILE *f = fopen(file_name, "w");
@@ -17,7 +17,7 @@ void createFiles(struct Text* text, int chapter_id){
     }
     fprintf(f, "<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\">\n<title>%s</title>\n<link rel=\"%s\" href=\"%s\">\n<script src=\"%s\" defer></script>\n</head>\n<body>\n",  text->chapters[chapter_id - 1].title, stylesheet, css_file, js_file);
     fprintf(f, "<h1>%s</h1>\n", text->chapters[chapter_id - 1].title);
-    fprintf(f, "%s\n",text->chapters[chapter_id - 1].content );
+    fprintf(f, "<div class=\"content\">\n%s\n</div>\n",text->chapters[chapter_id - 1].content );
     for (int i = 0; i < MAX_CHOICES; i++) {
         int chapter_choice_id = text->chapters[chapter_id - 1].choices[i].choices_id;
         if ( chapter_choice_id > 0) {
