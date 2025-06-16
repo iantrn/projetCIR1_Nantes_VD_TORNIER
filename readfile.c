@@ -34,7 +34,6 @@ void readFile(char* filename, struct Text* text) {
             current = &text->chapters[id - 1];
             current->content[0] = '\0';
             sscanf(line, "<chapter id=\"%d\">%[^<]s</chapter>", &id, current->title);
-            printf("%s", current->title);
         }
         if (strstr(line,"<p")) {     
             strncat(text->chapters[id-1].content, line, 2048);
