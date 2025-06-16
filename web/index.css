@@ -20,13 +20,13 @@ h1{
 }
 .text{
     color: black;
-    overflow: scroll;
     width: 500px;
     height: 275px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -70%);
+    display: inline-block;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -70%); 
 }
 
 .content{
@@ -38,6 +38,22 @@ h1{
     height: 350px;
 }  
 
+.choices{
+    margin: 5px;
+    background-color: aliceblue;
+    border-color: blue;
+    border:1px solid;
+}
+
+.image-vieux{
+    position: absolute;
+
+}
+
+.image-vieux img {
+  width: 150px;
+  height: auto;    
+}
 
 #overlay {
     position: fixed;
