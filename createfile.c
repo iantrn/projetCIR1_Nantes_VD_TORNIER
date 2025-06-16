@@ -26,7 +26,7 @@ void createFiles(struct Text* text, int chapter_id){
             }
         continue;
         }
-    fprintf(f, "<div id=\"overlay\"></div>");
+    fprintf(f, "<div id=\"overlay\"></div>\n");
     fprintf(f, "</body>\n</html>\n");
         
     fclose(f);
