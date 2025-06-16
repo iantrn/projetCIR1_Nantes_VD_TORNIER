@@ -10,19 +10,37 @@ function main() {
             overlay.classList.remove('active');
             setTimeout(() => {
             window.location.href = link.href;
+                }, 2000);
             }, 2000);
-        }, 2000);
+        });
     });
-  });
-  function backgroundMusic() {
+    
+    function backgroundMusic() {
     const audio = document.getElementById('background-audio');
-    audio.play().catch(err => {
-      console.warn("Lecture automatique bloquée. L'utilisateur doit interagir.");
-    });
+    const sound_button = document.getElementById('sound_button');
+    const icon = sound_button.querySelector('i');
+    audio.play();
+
+    sound_button.onclick = function () {
+      audio.muted = !audio.muted;
+
+      if (audio.muted) {
+        icon.className = "fas fa-volume-mute";
+      } else {
+        icon.className = "fas fa-volume-up";
+      }
+    };
   }
-  window.addEventListener('DOMContentLoaded', backgroundMusic);
-
-
+    window.addEventListener('DOMContentLoaded', backgroundMusic);
+    function returnHome(event) {
+        event.preventDefault();
+        if (confirm("Voulez-vous recommencer votre aventure ? ") == true) {  
+            window.location.href = "../export/1.html";   
+        }
+    }
+    let home_button = document.getElementById("home_button");   
+    home_button.addEventListener("click", returnHome);
+    
 
 }
 
