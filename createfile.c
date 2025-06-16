@@ -12,7 +12,7 @@ void createFiles(struct Text* text, int chapter_id){
 
     FILE *f = fopen(file_name, "w");
     if (f == NULL) {
-         printf("Erreur de lecture du chapitre : %d\n", chapter_id);
+        printf("Erreur de lecture du chapitre : %d\n", chapter_id);
         exit(1);
     }
     fprintf(f, "<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\">\n<title>%s</title>\n<link rel=\"%s\" href=\"%s\">\n<script src=\"%s\" defer></script>\n",  text->chapters[chapter_id - 1].title, stylesheet, css_file, js_file);
@@ -29,6 +29,7 @@ void createFiles(struct Text* text, int chapter_id){
             }
         continue;
         }
+    fprintf(f,"<div class=\"image-vieux\">\n<img id=\"vieux\"src=\"../web/images/vieux.png\"></img>\n</div>\n");
     fprintf(f, "<div id=\"overlay\"></div>\n");
     fprintf(f,"<audio id=\"background-audio\" src=\"../web/images/background_musique.mp3\" loop></audio>\n");
     fprintf(f,"<button id=\"home_button\">\n<i class=\"fa-solid fa-house\"></i>\n</button>\n");
