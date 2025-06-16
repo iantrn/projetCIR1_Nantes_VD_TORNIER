@@ -22,10 +22,11 @@ void createFiles(struct Text* text, int chapter_id){
         int chapter_choice_id = text->chapters[chapter_id - 1].choices[i].choices_id;
         if ( chapter_choice_id > 0) {
             char *chapter_choice_content = text->chapters[chapter_id - 1].choices[i].choices_content;  
-            fprintf(f, "<div class=\"choices\">\n<a href=\"%d.html\">%s</a>\n</div>\n", chapter_choice_id, chapter_choice_content);
+            fprintf(f, "<div class=\"choices\">\n<a href=\"%d.html\" class=\"choice\">%s</a>\n</div>\n", chapter_choice_id, chapter_choice_content);
             }
         continue;
         }
+    fprintf(f, "<div id=\"overlay\"></div>\n");
     fprintf(f, "</body>\n</html>\n");
         
     fclose(f);
