@@ -15,7 +15,9 @@ void createFiles(struct Text* text, int chapter_id){
          printf("Erreur de lecture du chapitre : %d\n", chapter_id);
         exit(1);
     }
-    fprintf(f, "<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\">\n<title>%s</title>\n<link rel=\"%s\" href=\"%s\">\n<script src=\"%s\" defer></script>\n</head>\n<body>\n",  text->chapters[chapter_id - 1].title, stylesheet, css_file, js_file);
+    fprintf(f, "<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\">\n<title>%s</title>\n<link rel=\"%s\" href=\"%s\">\n<script src=\"%s\" defer></script>\n",  text->chapters[chapter_id - 1].title, stylesheet, css_file, js_file);
+    fprintf(f, "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n<link href=\"https://fonts.googleapis.com/css2?family=Jacquard+24&display=swap\" rel=\"stylesheet\">\n");
+    fprintf(f,"</head>\n<body>\n");
     fprintf(f, "<h1>%s</h1>\n", text->chapters[chapter_id - 1].title);
     fprintf(f, "<div class=\"content\">\n%s\n</div>\n",text->chapters[chapter_id - 1].content );
     for (int i = 0; i < MAX_CHOICES; i++) {
