@@ -20,7 +20,7 @@ void createFiles(struct Text* text, int chapter_id){
     fprintf(f, "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">\n");
     fprintf(f, "</head>\n<body>\n");
     fprintf(f, "<h1>%s</h1>\n", text->chapters[chapter_id - 1].title);
-    fprintf(f, "<div class=\"content\">\n%s\n</div>\n",text->chapters[chapter_id - 1].content );
+    fprintf(f, "<div class=\"content\"><div class=\"text\"></div>\n%s\n</div>\n",text->chapters[chapter_id - 1].content );
     for (int i = 0; i < MAX_CHOICES; i++) {
         int chapter_choice_id = text->chapters[chapter_id - 1].choices[i].choices_id;
         if ( chapter_choice_id > 0) {
