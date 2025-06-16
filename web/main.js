@@ -40,7 +40,23 @@ function main() {
     }
     let home_button = document.getElementById("home_button");   
     home_button.addEventListener("click", returnHome);
-    
+
+    const graph = { 
+        "01": ["02", "03"],
+        "02": ["03", "04", "05"],
+        "03": ["06", "09"],         
+        "04": ["09"],
+        "05": ["02"],
+        "06": ["07", "08"],
+        "07": ["09"],
+        "08": ["10"],
+        "09": [],
+        "10": [],
+    }
+    function shortestPath(current, goal) {
+        
+    }
+
 
 }
 
