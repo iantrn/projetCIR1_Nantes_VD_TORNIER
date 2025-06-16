@@ -6,8 +6,8 @@ void createFiles(struct Text* text, int chapter_id){
     char file_name[64];
     snprintf(file_name, 64, "export/%d.html", chapter_id);
     char stylesheet[64] = "stylesheet";
-    char css_file[64] = "web/index.css";
-    char js_file[64] = "main.js";
+    char css_file[64] = "../web/index.css";
+    char js_file[64] = "../web/main.js";
     
 
     FILE *f = fopen(file_name, "w");
