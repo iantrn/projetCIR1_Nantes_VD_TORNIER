@@ -15,6 +15,20 @@ function main() {
         });
     });
     
+    function partirDroite(event){
+        event.preventDefault();
+        const img = document.getElementById('vieux');
+        img.style.transform = 'translate(150vw, -50%)';
+
+        setTimeout(() => {
+        window.location = event.target.href;
+      }, 2000);
+    }
+
+
+    partirDroite();
+
+
     function backgroundMusic() {
     const audio = document.getElementById('background-audio');
     const sound_button = document.getElementById('sound_button');
@@ -110,7 +124,6 @@ function main() {
         marquerChoix(chapitreActuel, cheminVersVictoire);
     }
 }
-
 
 
 
