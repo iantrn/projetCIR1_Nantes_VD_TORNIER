@@ -60,13 +60,17 @@ h1{
     align-items: center;
 }
 
-#vieux {
+#vieux { 
     position: absolute;
     width: 150px;
     height: auto;
-    animation-duration: 3s;
-    animation-name: entree;
-    animation-iteration-count: 1;
+    
+    transform: translate(-50%, -5%);
+}
+
+
+#vieux.sortie {
+  animation: sortieDroite 3s ease-in-out forwards;
 }
 
 
