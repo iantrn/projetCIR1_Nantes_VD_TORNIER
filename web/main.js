@@ -23,8 +23,6 @@ function main() {
             }, 1000);
         });
     });
-    
-    
 
     function backgroundMusic() {
     const audio = document.getElementById('background-audio');
