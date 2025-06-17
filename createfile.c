@@ -36,6 +36,10 @@ void createFiles(struct Text* text, int chapter_id){
     fprintf(f,"<button id=\"home_button\">\n<i class=\"fa-solid fa-house\"></i>\n</button>\n");
     fprintf(f,"<button id=\"sound_button\">\n<i class=\"fas fa-volume-up\"></i>\n</button>\n");
     fprintf(f,"<button id=\"hint_button\">\n<i class=\"fa-solid fa-lightbulb\"></i>\n</button>\n");
+    fprintf(f,"<i class=\"fa fa-check\" aria-hidden=\"true\"style=\"color: limegreen;\"></i>\n");
+    fprintf(f,"<i class=\"fa-solid fa-skull\" style=\"color: crimson;\"></i>\n");
+    fprintf(f,"<i class=\"fa-solid fa-question\" style=\"color: gray;\"></i>\n");
+
     fprintf(f, "</body>\n</html>\n");
         
     fclose(f);
