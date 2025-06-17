@@ -81,8 +81,81 @@ function main() {
             window.location = link.href;
           }, 3000);
         });
-      });
+      }); 
     };
+    const url = window.location.href;
+
+      if (url.includes("7.html")){
+        const jeu = document.createElement("div");
+        jeu.className = "Jeu";
+        jeu.innerHTML =  `
+          <div class="game">
+            <button class="start-btn">Start</button>
+            <div class="game-info">
+              <span class="time">Temps : 0</span>
+              <span class="score">Score : 0</span>
+            </div>
+            <div class="mini-jeu">
+            </div>
+            <button class="quit-btn">Quit</button>
+          </div>
+        `;
+        document.body.appendChild(jeu);
+      }
+
+      let mini_jeu = document.querySelector('.mini-jeu');
+      let start_btn = document.querySelector('.start-btn');
+      let quit_btn = document.querySelector('.quit-btn');
+      let time = document.querySelector('.time');
+      let score = document.querySelector('.score');
+
+      quit_btn.onclick = function(){
+        window.location.href = "9.html"
+      }
+      
+      start_btn.onclick = function(){
+        let score = 0;
+        let time = 15;
+        mini_jeu.innerHTML = "";
+
+        let interval = setInterval(function showTarget(){
+
+          let target = document.createElement('img');
+          target.id="target";
+          target.src="../web/images/silly.png"
+          mini_jeu.appendChild(target);
+          target.style.top = Math.random() * (500 - target.offsetHeight) + 'px';
+          target.style.left = Math.random() * (600 - target.offsetWidth) + 'px';
+
+
+          setTimeout(function(){
+            target.remove();
+          }, 2000)
+
+          target.onclick = function(){
+            score += 1;
+            target.style.display = 'none';
+
+          }
+          time-= 1;
+
+          score.innerHTML = `Score : ${score}`
+          time.innerHTML = ` Temps : ${time}`
+
+          if(time == 0){
+            window.location.href = "9.html"
+          }
+
+          if(score == 10){
+            window.location.href = "10.html"
+          }
+
+        }, 1000);
+      }
+
+
+
+
 }
 
 
