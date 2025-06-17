@@ -46,15 +46,15 @@ h1{
 
 .image-vieux{
     position: relative;
-
+    
 }
 
-.image-vieux img {
+#vieux {
     position: absolute;
     width: 150px;
     height: auto;
-    right: 0px;
-    left: 1px 
+    transition: transform 2s ease-in-out;
+    transform: translate(-50%, -5%);
 }
 
 #overlay {
