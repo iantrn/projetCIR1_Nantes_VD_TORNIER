@@ -45,13 +45,16 @@ h1{
 }
 
 .image-vieux{
-    position: absolute;
+    position: relative;
 
 }
 
 .image-vieux img {
-  width: 150px;
-  height: auto;    
+    position: absolute;
+    width: 150px;
+    height: auto;
+    right: 0px;
+    left: 1px 
 }
 
 #overlay {
