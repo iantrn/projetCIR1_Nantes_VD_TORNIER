@@ -22,6 +22,7 @@ void createFiles(struct Text* text, int chapter_id){
     fprintf(f, "</head>\n<body>\n");
     fprintf(f, "<h1>%s</h1>\n", text->chapters[chapter_id - 1].title);
     fprintf(f, "<div class=\"content\">\n<div class=\"text\">\n%s\n</div>\n</div>\n",text->chapters[chapter_id - 1].content );
+    fprintf(f,"<div id=\"container\">\n");
     for (int i = 0; i < MAX_CHOICES; i++) {
         int chapter_choice_id = text->chapters[chapter_id - 1].choices[i].choices_id;
         if ( chapter_choice_id > 0) {
@@ -30,6 +31,7 @@ void createFiles(struct Text* text, int chapter_id){
             }
         continue;
         }
+    fprintf(f,"</div>\n");
     fprintf(f,"<div class=\"image-vieux\">\n<img id=\"vieux\"src=\"../web/images/vieux.png\"></img>\n</div>\n");
     fprintf(f, "<div id=\"overlay\"></div>\n");
     fprintf(f,"<audio id=\"background-audio\" src=\"../web/images/background_musique.mp3\" loop></audio>\n");
