@@ -1,5 +1,7 @@
 function main() {
     
+
+
     
     window.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("overlay");
@@ -50,7 +52,15 @@ function main() {
     let home_button = document.getElementById("home_button");   
     home_button.addEventListener("click", returnHome);
  
+    function partirADroite(event) {
+      event.preventDefault(); // on bloque le changement de page immédiat
+      const img = document.getElementById('vieux');
+      img.style.transform = 'translateY(-50%) translateX(100vw)'; // slide vers la droite
 
+      setTimeout(() => {
+        window.location = event.target.href;
+      }, 2000); // attendre la fin de l'anim (800ms = même durée que CSS transition)
+    }
 
 }
 
