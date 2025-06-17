@@ -1,17 +1,26 @@
 function main() {
-    const links = document.querySelectorAll('.choice');
-    const overlay = document.getElementById('overlay');
+    
+    
+    window.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.getElementById("overlay");
+    setTimeout(() => {
+        overlay.classList.add("fade-out");
+        }, 100);
+    });
 
+
+    const links = document.querySelectorAll('a.choice');
     links.forEach(link => {
         link.addEventListener('click', function(event) {
         event.preventDefault();
-        overlay.classList.add('active');
+        const overlay = document.getElementById("overlay");
+        overlay.classList.remove("fade-out");
+        overlay.classList.add("active");      
+        overlay.style.opacity = 1;
+
         setTimeout(() => {
-            overlay.classList.remove('active');
-            setTimeout(() => {
             window.location.href = link.href;
-                }, 2000);
-            }, 2000);
+            }, 1000);
         });
     });
 
@@ -40,75 +49,9 @@ function main() {
     }
     let home_button = document.getElementById("home_button");   
     home_button.addEventListener("click", returnHome);
+ 
 
-    const graph = { 
-        "01": ["02", "03"],
-        "02": ["03", "04", "05"],
-        "03": ["06", "09"],         
-        "04": ["09"],
-        "05": ["02"],
-        "06": ["07", "08"],
-        "07": ["09"],
-        "08": ["10"],
-        "09": [],
-        "10": [],
-    }
-    function findShortestPath(graph, start, goal) {
-        const queue = [[start]];
-        const visited = new Set();
 
-        while (queue.length > 0) {
-            const path = queue.shift();
-            const node = path[path.length - 1];
-
-            if (node === goal) return path;
-
-            if (!visited.has(node)) {
-            visited.add(node);
-            for (const neighbor of graph[node] || []) {
-                const newPath = [...path, neighbor];
-                queue.push(newPath);
-                }
-            }
-        }
-        return null;
-    }
-    function marquerChoix(chapitreActuel, cheminOptimal) {
-        const nextNode = cheminOptimal[cheminOptimal.indexOf(chapitreActuel) + 1];
-
-        const choix = document.querySelectorAll("choice");
-        choix.forEach((choice) => {
-        const idref = choice.getAttribute("idref");
-  
-        const existingIcon = choice.querySelector("i.fa-path-icon");
-        if (existingIcon) existingIcon.remove();
-
-        const icon = document.createElement("i");
-        icon.classList.add("fa-path-icon", "fas"); 
-
-        if (idref === nextNode) {
-            icon.classList.add("fa-check-circle"); 
-            icon.style.color = "limegreen";
-        }   
-        else if (idref === "09") {
-            icon.classList.add("fa-skull-crossbones");
-            icon.style.color = "crimson";
-        }   
-        else {
-            icon.classList.add("fa-question-circle"); 
-            icon.style.color = "gray";
-        }
-        icon.style.marginLeft = "8px";
-        choice.appendChild(icon);
-        });
-    
-    }
-    const chapitreActuel = idref; 
-    const cheminVersVictoire = findShortestPath(graph, chapitreActuel, "10");
-
-    if (cheminVersVictoire) {
-        marquerChoix(chapitreActuel, cheminVersVictoire);
-    }
 }
 
 
