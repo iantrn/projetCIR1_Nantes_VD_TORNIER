@@ -49,6 +49,40 @@ function main() {
     let home_button = document.getElementById("home_button");   
     home_button.addEventListener("click", returnHome);
 
+
+    window.onload = function() {
+      const vieux = document.getElementById('vieux');
+  
+      // Crée l'animation d'entrée
+      vieux.style.animation = 'entreeGauche 3s ease-in-out forwards';
+
+      const styleSheet = document.createElement("style");
+      styleSheet.innerHTML = `
+        @keyframes entreeGauche {
+          0% { transform: translate(-150vw, -5%); }
+          100% { transform: translate(-50%, -5%); }
+        }
+        @keyframes sortieDroite {
+          0% { transform: translate(-50%, -5%); }
+          100% { transform: translate(150vw, -5%); }
+      }
+      `;
+      document.head.appendChild(styleSheet);
+
+      // Ajoute l'écoute sur tous les liens
+      document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(event) {
+          event.preventDefault();
+      
+          // Déclenche l'animation de sortie
+          vieux.style.animation = 'sortieDroite 3s ease-in-out forwards';
+
+          setTimeout(() => {
+            window.location = link.href;
+          }, 3000);
+        });
+      });
+    };
 }
 
 

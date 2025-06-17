@@ -60,37 +60,25 @@ h1{
     align-items: center;
 }
 
-#vieux {
+#vieux { 
     position: absolute;
     width: 150px;
     height: auto;
-    animation-duration: 3s;
-    animation-name: entree;
-    animation-iteration-count: 1;
+    /* animation-duration: 2s; */
+    /* animation-name: entree; */
+    /* animation-iteration-count: 1; */
+    transform: translate(-50%, -5%);
 }
-#vieux :active {
-    animation-name: sortie;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-}
-@keyframes entree {
-    from {
-        margin-right: 100%;
-    }
-    to {
-        margin-right: 50%;
-    }
-    
-}
-@keyframes sortie {
-    from {
-        margin-left: -10%;
 
-    }
-    to {
-        margin-left: 50%;
-    }
+
+#vieux.entree {
+  animation: entreeGauche 3s ease-in-out forwards;
 }
+
+#vieux.sortie {
+  animation: sortieDroite 3s ease-in-out forwards;
+}
+
 
 #overlay {
   position: fixed;
