@@ -1,8 +1,4 @@
-function main() {
-    
-
-
-    
+function main() {    
     window.addEventListener("DOMContentLoaded", () => {
     const overlay = document.getElementById("overlay");
     setTimeout(() => {
@@ -11,13 +7,14 @@ function main() {
     });
 
 
-    const links = document.querySelectorAll('a.choice');
+    const links = document.querySelectorAll("a.choice");
+    const image_vieux = document.getElementById("vieux");
     links.forEach(link => {
         link.addEventListener('click', function(event) {
         event.preventDefault();
         const overlay = document.getElementById("overlay");
         overlay.classList.remove("fade-out");
-        overlay.classList.add("active");      
+        overlay.classList.add("active");   
         overlay.style.opacity = 1;
 
         setTimeout(() => {
@@ -51,16 +48,6 @@ function main() {
     }
     let home_button = document.getElementById("home_button");   
     home_button.addEventListener("click", returnHome);
- 
-    function partirADroite(event) {
-      event.preventDefault(); // on bloque le changement de page immédiat
-      const img = document.getElementById('vieux');
-      img.style.transform = 'translateY(-50%) translateX(100vw)'; // slide vers la droite
-
-      setTimeout(() => {
-        window.location = event.target.href;
-      }, 2000); // attendre la fin de l'anim (800ms = même durée que CSS transition)
-    }
 
 }
 

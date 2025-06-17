@@ -55,15 +55,41 @@ h1{
     
 }
 .image-vieux{
-    position: relative;  
+    position: relative; 
+    width: 100%; 
+    align-items: center;
 }
 
 #vieux {
     position: absolute;
     width: 150px;
     height: auto;
-    transition: transform 2s ease-in-out;
-    transform: translate(-50%, -5%);
+    animation-duration: 3s;
+    animation-name: entree;
+    animation-iteration-count: 1;
+}
+#vieux :active {
+    animation-name: sortie;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+@keyframes entree {
+    from {
+        margin-right: 100%;
+    }
+    to {
+        margin-right: 50%;
+    }
+    
+}
+@keyframes sortie {
+    from {
+        margin-left: -10%;
+
+    }
+    to {
+        margin-left: 50%;
+    }
 }
 
 #overlay {
