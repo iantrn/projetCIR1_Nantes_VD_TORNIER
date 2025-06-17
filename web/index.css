@@ -68,29 +68,7 @@ h1{
     animation-name: entree;
     animation-iteration-count: 1;
 }
-#vieux :active {
-    animation-name: sortie;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
-}
-@keyframes entree {
-    from {
-        margin-right: 100%;
-    }
-    to {
-        margin-right: 50%;
-    }
-    
-}
-@keyframes sortie {
-    from {
-        margin-left: -10%;
 
-    }
-    to {
-        margin-left: 50%;
-    }
-}
 
 #overlay {
   position: fixed;
