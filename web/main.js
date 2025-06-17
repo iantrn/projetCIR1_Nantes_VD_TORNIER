@@ -28,6 +28,16 @@ function main() {
 
     partirDroite();
 
+    window.onload = function() {
+      const img = document.getElementById('vieuxPere');
+
+      img.style.transform = 'translate(-150vw, -50%)'; 
+
+
+      setTimeout(() => {
+    img.style.transform = 'translate(-50%, -5%)';
+  }, 50);
+};
 
     function backgroundMusic() {
     const audio = document.getElementById('background-audio');
