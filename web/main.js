@@ -53,7 +53,6 @@ function main() {
     window.onload = function() {
       const vieux = document.getElementById('vieux');
   
-      // Crée l'animation d'entrée
       vieux.style.animation = 'entreeGauche 3s ease-in-out forwards';
 
       const styleSheet = document.createElement("style");
@@ -69,12 +68,10 @@ function main() {
       `;
       document.head.appendChild(styleSheet);
 
-      // Ajoute l'écoute sur tous les liens
       document.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', function(event) {
           event.preventDefault();
-      
-          // Déclenche l'animation de sortie
+  
           vieux.style.animation = 'sortieDroite 3s ease-in-out forwards';
 
           setTimeout(() => {
@@ -86,6 +83,7 @@ function main() {
     const url = window.location.href;
 
       if (url.includes("7.html")){
+        //faire apparaitre le html du jeu
         const jeu = document.createElement("div");
         jeu.className = "Jeu";
         jeu.innerHTML =  `
@@ -106,8 +104,8 @@ function main() {
       let mini_jeu = document.querySelector('.mini-jeu');
       let start_btn = document.querySelector('.start-btn');
       let quit_btn = document.querySelector('.quit-btn');
-      let time = document.querySelector('.time');
-      let score = document.querySelector('.score');
+      let scoreElement =document.querySelector(".score");
+      let timeElement = document.querySelector(".time");
 
       quit_btn.onclick = function(){
         window.location.href = "9.html"
@@ -139,8 +137,8 @@ function main() {
           }
           time-= 1;
 
-          score.innerHTML = `Score : ${score}`
-          time.innerHTML = ` Temps : ${time}`
+          scoreElement.innerHTML = `score : ${score}`
+          timeElement.innerHTML = ` time : ${time}`
 
           if(time == 0){
             window.location.href = "9.html"
@@ -152,9 +150,6 @@ function main() {
 
         }, 1000);
       }
-
-
-
 
 }
 
