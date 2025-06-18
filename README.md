@@ -2,6 +2,11 @@
 
 ## Ceci est un livre interactif dont vous êtes le héros 
 
+## Cahier des charges
+  - Interface graphique complète et ambiance sonore
+  - Ajout des boutons pour couper le son et retourner au début du jeu
+  - Système de "combat" contre le boss final sous forme de mini-jeu
+
 ## Installation 
   - Télécharger le fichier .ZIP du projet
   - Extraire le fichier dans un dossier example
