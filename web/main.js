@@ -88,14 +88,14 @@ function main() {
         jeu.className = "Jeu";
         jeu.innerHTML =  `
           <div class="game">
-            <button class="start-btn">Start</button>
+            <button class="start-btn">Commencer</button>
             <div class="game-info">
               <span class="time">Temps : 0</span>
               <span class="score">Score : 0</span>
             </div>
             <div class="mini-jeu">
             </div>
-            <button class="quit-btn">Quit</button>
+            <button class="quit-btn">Quitter</button>
           </div>
         `;
         document.body.appendChild(jeu);
